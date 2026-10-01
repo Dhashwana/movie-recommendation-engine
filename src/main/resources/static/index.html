@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinefind — Movie Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="logo">Cinefind</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+<main>
+    <section class="hero" id="discover">
+        <div class="hero-text">
+            <p class="eyebrow">MOVIE DISCOVERY</p>
+            <h1>Find something<br><em>you'll love.</em></h1>
+            <p class="intro">Tell us what you're looking for. We'll find movies that match your taste.</p>
+        </div>
+        <div class="search-panel">
+            <div class="filter">
+                <label>GENRE</label>
+                <select id="genre">
+                    <option value="All">All genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Horror">Horror</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label>MINIMUM RATING</label>
+                <input type="number" id="rating" value="7" min="0" max="10" step="0.1">
+            </div>
+            <div class="filter">
+                <label>FROM YEAR</label>
+                <input type="number" id="year" value="2000" min="1900" max="2026">
+            </div>
+            <button onclick="getRecommendations()">Find Movies <span>→</span></button>
+        </div>
+    </section>
+    <section class="results-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR RESULTS</p>
+                <h2 id="resultTitle">Pick your preferences</h2>
+            </div>
+            <p id="resultCount"></p>
+        </div>
+        <div id="results" class="movie-grid"></div>
+    </section>
+    <section class="about" id="about">
+        <p class="eyebrow">ABOUT CINEFIND</p>
+        <div>
+            <p>Cinefind uses your preferred genre, minimum rating and release year to discover movies that fit your choices.</p>
+            <p class="tmdb-credit">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <span>Cinefind</span>
+    <span>Movie Recommendation Engine</span>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
